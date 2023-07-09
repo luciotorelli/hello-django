@@ -31,7 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+if development:
+    ALLOWED_HOSTS = ['8000-luciotorell-hellodjango-q1afj0tnk4i.ws-eu101.gitpod.io']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 
 # Application definition
